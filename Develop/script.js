@@ -37,7 +37,7 @@ function checkPasswordLength(passwordLength) {
 // Funtion ran when user clicks the 'generate password' button on the screen
 function generatePassword() {
   // Asking the user if they would like to include uppercase letters 
-  var uppercasePrompt = "Do you want your password to include uppercase letters ";
+  var uppercasePrompt = "Do you want your password to include uppercase letters? ";
   var uppercaseEnabled = confirm(uppercasePrompt);
 // Asking the user if they would like to inlcude numbers
   var numberPrompt = "Do you want your password to include numbers? ";
@@ -47,7 +47,7 @@ function generatePassword() {
   var specialEnabled = confirm(specialPrompt);
 
 // Asking the user if they'd like to chose the length of their password
-  var passwordPrompt = "Would you like to set a specific length to this password? If not, a length of 8-128 characters will be chosen at random. ";
+  var passwordPrompt = "Do you want to set a specific length to this password? If not, a length of 8-128 characters will be chosen at random. ";
   var lengthEnabled = confirm(passwordPrompt);
   var passwordLength;
   // Asking for specific length if answered yes to previous question
