@@ -26,12 +26,24 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
-// If the user decides to specifiy password length, this funtion will ensure the user's choice falls within assigned range
+// If user decides to input password length, this function will ensure input is a numeric value, and that it falls within assigned range (8-128)
 function checkPasswordLength(passwordLength) {
-  if(passwordLength >= 8 && passwordLength <= 128) {
+  // Check to ensure input is a number
+  if (isNaN(passwordLength)) {
+    alert("Please enter a numeric value.");
+    return false;
+  }
+
+  // Converting the string input to a number
+  var length = parseInt(passwordLength, 10);
+
+  // Check to ensure input is within the valid range
+  if (length >= 8 && length <= 128) {
     return true;
-  } 
-  return false; // Now jumping back to the loop that I was in, thatsent me here
+  } else {
+    alert("Password length must be between 8 and 128 characters.");
+    return false;
+  }
 }
 
 // Funtion ran when user clicks the 'generate password' button on the screen
